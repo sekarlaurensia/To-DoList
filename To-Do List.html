@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <h2>To-Do List</h2>
+
+    <input type="text" id="tugas" placeholder="Tulis tugas...">
+    <button onclick="tambahTugas()">Tambah</button>
+
+    <ul id="daftarTugas"></ul>
+
+    <script>
+        function tambahTugas() {
+            let input = document.getElementById("tugas");
+            let teksTugas = input.value.trim();
+
+            if (teksTugas === "") {
+                return;
+            }
+
+            let item = document.createElement("li");
+
+            item.textContent = teksTugas;
+
+            document.getElementById("daftarTugas")
+                    .appendChild(item);
+
+            input.value = "";
+        }
+    </script>
+
+</body>
+</html>
